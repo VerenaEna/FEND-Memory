@@ -2,17 +2,19 @@
  * Create a list that holds all of your cards
  */
  // define icons
- var $diamond = $('.fa-diamond');
- var $plane = $('.fa-paper-plane-o');
- var $anchor = $('.fa-anchor');
- var $bolt = $('.fa-bolt');
- var $cube = $('.fa-cube');
- var $leaf = $('.fa-leaf');
- var $bicycle = $('.fa-bicycle');
- var $bomb = $('.fa-bomb');
+ var diamond = $('.fa-diamond');
+ var plane = $('.fa-paper-plane-o');
+ var anchor = $('.fa-anchor');
+ var bolt = $('.fa-bolt');
+ var cube = $('.fa-cube');
+ var leaf = $('.fa-leaf');
+ var bicycle = $('.fa-bicycle');
+ var bomb = $('.fa-bomb');
  //create a list holds all icons
- var $cardsArray = [$diamond,$diamond,$plane,$plane,$anchor,$anchor,$bolt,$bolt,$cube,$cube,$leaf,$leaf,$bicycle,$bicycle,$bomb,$bomb];
- console.log($cardsArray);
+ var cardsArray = [diamond,diamond,plane,plane,anchor,anchor,bolt,bolt,cube,cube,leaf,leaf,bicycle,bicycle,bomb,bomb];
+ console.log(cardsArray);
+//define shuffled icons
+var shuffledIcons = shuffle(cardsArray);
 
 /*
  * Display the cards on the page
@@ -21,12 +23,11 @@
  *   - add each card's HTML to the page
  */
 
-function displayCard(){
- $(this).toggleClass('open');
- $(this).toggleClass('show');
- $(this).toggleClass('disabled');
-};
 
+// click handler event listener
+$('.card').click(function() {
+  console.log('you made clicks on a card');
+});
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
@@ -43,6 +44,7 @@ function shuffle(array) {
     return array;
 }
 
+
 /*
  * set up the event listener for a card. If a card is clicked:
  *  - display the card's symbol (put this functionality in another function that you call from this one)
@@ -53,6 +55,3 @@ function shuffle(array) {
  *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
-
- // click handler event listener
- $('.card').click(displayCard);

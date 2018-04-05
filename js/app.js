@@ -2,17 +2,17 @@
  * Create a list that holds all of your cards
  */
  // define icons
- var diamond = $('.fa-diamond');
- var plane = $('.fa-paper-plane-o');
- var anchor = $('.fa-anchor');
- var bolt = $('.fa-bolt');
- var cube = $('.fa-cube');
- var leaf = $('.fa-leaf');
- var bicycle = $('.fa-bicycle');
- var bomb = $('.fa-bomb');
+ var $diamond = $('.fa-diamond');
+ var $plane = $('.fa-paper-plane-o');
+ var $anchor = $('.fa-anchor');
+ var $bolt = $('.fa-bolt');
+ var $cube = $('.fa-cube');
+ var $leaf = $('.fa-leaf');
+ var $bicycle = $('.fa-bicycle');
+ var $bomb = $('.fa-bomb');
  //create a list holds all icons
- var cardsArray = [diamond,diamond,plane,plane,anchor,anchor,bolt,bolt,cube,cube,leaf,leaf,bicycle,bicycle,bomb,bomb];
- console.log(cardsArray);
+ var $cardsArray = [$diamond,$diamond,$plane,$plane,$anchor,$anchor,$bolt,$bolt,$cube,$cube,$leaf,$leaf,$bicycle,$bicycle,$bomb,$bomb];
+ console.log($cardsArray);
 
 /*
  * Display the cards on the page
@@ -20,6 +20,13 @@
  *   - loop through each card and create its HTML
  *   - add each card's HTML to the page
  */
+
+function displayCard(){
+ $(this).toggleClass('open');
+ $(this).toggleClass('show');
+ $(this).toggleClass('disabled');
+};
+
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
@@ -36,7 +43,6 @@ function shuffle(array) {
     return array;
 }
 
-
 /*
  * set up the event listener for a card. If a card is clicked:
  *  - display the card's symbol (put this functionality in another function that you call from this one)
@@ -49,6 +55,4 @@ function shuffle(array) {
  */
 
  // click handler event listener
- $('.card').click(function() {
-   console.log('you made clicks on a card');
- });
+ $('.card').click(displayCard);

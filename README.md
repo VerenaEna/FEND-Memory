@@ -3,7 +3,7 @@
 ## Table of Contents
 
 * [Instructions](#instructions)
-* [Contributing](#contributing)
+* [How To](#howto)
 
 ## Instructions
 
@@ -13,8 +13,22 @@ To get started, open `js/app.js` and start building out the app's functionality
 
 For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
 
-## Contributing
+## How To
+Need to display 8 pairs of cards - 16 cards
+Need to check (click EventListener) if 2 clicked cards matching frontside
+Need to check (click EventListener) if 2 clicked cards show backside
+  No Match
+  Match
+Need a timer
+Need star rating - depends on moves
+Need move counter - every click = 1 move
+  if 16 cards show frontside(matched,disabled)
+    Finish the Game
+      show modal/winner
+        show time needed
+        show starrating
+        show restart button
 
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
 
-For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
+## Game Goal
+Goal of the Game is to match all 16 cards together

@@ -1,7 +1,18 @@
 /*
  * Create a list that holds all of your cards
  */
-
+ // define icons
+ var diamond = $('.fa-diamond');
+ var plane = $('.fa-paper-plane-o');
+ var anchor = $('.fa-anchor');
+ var bolt = $('.fa-bolt');
+ var cube = $('.fa-cube');
+ var leaf = $('.fa-leaf');
+ var bicycle = $('.fa-bicycle');
+ var bomb = $('.fa-bomb');
+ //create a list holds all icons
+ var cardsArray = [diamond,diamond,plane,plane,anchor,anchor,bolt,bolt,cube,cube,leaf,leaf,bicycle,bicycle,bomb,bomb];
+ console.log(cardsArray);
 
 /*
  * Display the cards on the page

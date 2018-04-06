@@ -19,6 +19,9 @@ var matchedCards = [];
 var match = 0;
 //define deck
 var deck = $('.deck');
+// define move Variable
+var counter = 0;
+var moves = $('.moves');
 
 //@description: check Cards if match
 function check(e){
@@ -34,7 +37,7 @@ function check(e){
       unmatched();
       console.log('sorry, no match - try another pair ;)');
     }
-    //moveCounter();
+    moveCounter();
   }
 }
 
@@ -54,6 +57,11 @@ function unmatched(){
     //TODO: enable();
     matchedCards = [];
   }, 1000);
+}
+
+function moveCounter(){
+  counter++;
+  moves.html = counter;
 }
 
 /*
@@ -93,4 +101,5 @@ function shuffle(array) {
  //event listener
  $('.card').click(function(){
    check(this);
+   moves.text(counter);
  });

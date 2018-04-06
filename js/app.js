@@ -13,11 +13,23 @@ var bomb = $('.fa-bomb');
 //create a list holds all icons
 var cardsArray = [diamond,diamond,plane,plane,anchor,anchor,bolt,bolt,cube,cube,leaf,leaf,bicycle,bicycle,bomb,bomb];
 console.log(cardsArray);
+//define new array used to put matched cards into array
+var matchedCards = [];
 
 //@description: check Cards if match
 function check(element){
   $(element).toggleClass('open show');
+  matchedCards.add(element);
+  var length = matchedCards.length;
+  if(length===2){
+    if(matchedCards[0].type===matchedCards[1].type){
+      matched();
+    } else {
+      unmatched();
+    }
+  }
 };
+
 
 /*
  * Display the cards on the page

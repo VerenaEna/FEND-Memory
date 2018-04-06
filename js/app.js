@@ -29,9 +29,10 @@ function check(e){
     if(matchedCards[0].type === matchedCards[1].type){
       matched();
       console.log(matchedCards);
+      console.log('yeah, that was a match - keep on going :)');
     } else {
       unmatched();
-      console.log('sorry, no match - try another pair ;)')
+      console.log('sorry, no match - try another pair ;)');
     }
     //moveCounter();
   }

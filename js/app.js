@@ -15,6 +15,8 @@ var cardsArray = [diamond,diamond,plane,plane,anchor,anchor,bolt,bolt,cube,cube,
 console.log(cardsArray);
 //define new array used to put matched cards into array
 var matchedCards = [];
+// define matched element counts
+var match = 0;
 
 //@description: check Cards if match
 function check(element){
@@ -30,6 +32,17 @@ function check(element){
   }
 };
 
+function matched(){
+  deck.find('.open').addClass('match');
+  setTimeOut(function(){
+    deck.find('.match').removeClass('open');
+  }, 500);
+  match++;
+}
+
+function unmatched(){
+
+};
 
 /*
  * Display the cards on the page

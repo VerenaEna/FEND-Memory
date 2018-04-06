@@ -1,36 +1,36 @@
- // define icons
-var diamond = $('.fa-diamond');
-var plane = $('.fa-paper-plane-o');
-var anchor = $('.fa-anchor');
-var bolt = $('.fa-bolt');
-var cube = $('.fa-cube');
-var leaf = $('.fa-leaf');
-var bicycle = $('.fa-bicycle');
-var bomb = $('.fa-bomb');
+// define icons
+const diamond = $('.fa .fa-diamond');
+const plane = $('.fa .fa-paper-plane-o');
+const anchor = $('.fa .fa-anchor');
+const bolt = $('.fa .fa-bolt');
+const cube = $('.fa .fa-cube');
+const leaf = $('.fa .fa-leaf');
+const bicycle = $('.fa .fa-bicycle');
+const bomb = $('.fa .fa-bomb');
+const card = $('.card');
 //create a list holds all icons
-var cardsArray = [diamond,diamond,plane,plane,anchor,anchor,bolt,bolt,cube,cube,leaf,leaf,bicycle,bicycle,bomb,bomb];
+let cardsArray = [...card];
 console.log(cardsArray);
 //define new array used to put matched cards into new array
-var matchedCards = [];
+let matchedCards = [];
 //define deck
-var deck = $('.deck');
+const deck = $('.deck');
 // define move Variable
-var counter = 0;
-var moves = $('.moves');
+let counter = 0;
+const moves = $('.moves');
 // define star icon Variable
-var stars = $('.fa-star');
+const stars = $('.fa-star');
 //define for timer function
-var millisec = 0;
-var second = 0;
-var minute = 0;
+let millisec = 0;
+let second = 0;
+let minute = 0;
 var interval;
-
 
 //@description: check Cards if match
 function check(type){
   $(type).addClass('open show');
   matchedCards.push(type);
-  var length = matchedCards.length;
+  let length = matchedCards.length;
   if(length === 2){
     if(matchedCards[0].type === matchedCards[1].type){
       matched();
@@ -82,19 +82,18 @@ function moveCounter(){
   }
 }
 
-//@description: game timer
+//@description: game timer runs proper
 function startTimer(){
   interval = setInterval(function(){
-    $('.timer').text(`Your Time: ${minute}:${second}`);
+    $('.timer').text(`${minute} minute ${second} seconds`);
     second++;
     if(second == 60){
-      //minute = `0${minute}`;
       minute++;
       second = 0;
     }
     //}
     if(second < 10){
-      second = `0${second}`
+      second = `0${second}`;
     }
   }, 1000);
 }
@@ -108,20 +107,21 @@ function startTimer(){
  */
 
 
-// Shuffle function from http://stackoverflow.com/a/2450976
-function shuffle(array) {
-    var currentIndex = array.length, temporaryValue, randomIndex;
+ // @description: shuffles cards (provided)
+ // Shuffle function from http://stackoverflow.com/a/2450976
+ function shuffle(array) {
+     var currentIndex = array.length, temporaryValue, randomIndex;
 
-    while (currentIndex !== 0) {
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex -= 1;
-        temporaryValue = array[currentIndex];
-        array[currentIndex] = array[randomIndex];
-        array[randomIndex] = temporaryValue;
-    }
+     while (currentIndex !== 0) {
+         randomIndex = Math.floor(Math.random() * currentIndex);
+         currentIndex -= 1;
+         temporaryValue = array[currentIndex];
+         array[currentIndex] = array[randomIndex];
+         array[randomIndex] = temporaryValue;
+     }
 
-    return array;
-}
+     return array;
+ }
 
 /*
  * set up the event listener for a card. If a card is clicked:

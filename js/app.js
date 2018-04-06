@@ -17,32 +17,43 @@ console.log(cardsArray);
 var matchedCards = [];
 // define matched element counts
 var match = 0;
+//define deck
+var deck = $('.deck');
 
 //@description: check Cards if match
-function check(element){
-  $(element).toggleClass('open show');
-  matchedCards.add(element);
+function check(e){
+  $(e).addClass('open show');
+  matchedCards.push(e);
   var length = matchedCards.length;
-  if(length===2){
-    if(matchedCards[0].type===matchedCards[1].type){
+  if(length === 2){
+    if(matchedCards[0].type === matchedCards[1].type){
       matched();
+      console.log(matchedCards);
     } else {
       unmatched();
+      console.log('sorry, no match - try another pair ;)')
     }
+    //moveCounter();
   }
-};
+}
 
 function matched(){
   deck.find('.open').addClass('match');
-  setTimeOut(function(){
-    deck.find('.match').removeClass('open');
-  }, 500);
-  match++;
+  setTimeout(function(){
+    deck.find('.match').removeClass('show open');
+    matchedCards = [];
+  }, 1000);
 }
 
 function unmatched(){
-
-};
+  deck.find('.open').addClass('unmatched');
+  //TODO: disabled();
+  setTimeout(function(){
+    deck.find('.unmatched').removeClass('show open unmatched');
+    //TODO: enable();
+    matchedCards = [];
+  }, 1000);
+}
 
 /*
  * Display the cards on the page

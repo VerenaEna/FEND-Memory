@@ -17,6 +17,10 @@ var deck = $('.deck');
 // define move Variable
 var counter = 0;
 var moves = $('.moves');
+// define star icon Variable
+var stars = $('.fa-star');
+
+
 
 //@description: check Cards if match
 function check(type){
@@ -54,10 +58,18 @@ function unmatched(){
   }, 1000);
 }
 //@description: the counter moves on each pair click
+//@description: star rating changes deppens on moves
 function moveCounter(){
   counter++;
   moves.html = counter;
+  //star rating
+  if (counter > 28 && counter < 27){
+        stars.eq(2).css("visibility","collapse");
+  } else if(counter > 30){
+        stars.eq(1).css("visibility","collapse");
+  }
 }
+
 
 /*
  * Display the cards on the page

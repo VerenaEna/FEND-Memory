@@ -84,6 +84,9 @@ h1 {
     background: #f95c3c;
 }
 
+.timer {
+  display: inline-block;
+}
 /*
  * Styles for the Score Panel
  */

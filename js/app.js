@@ -19,7 +19,11 @@ var counter = 0;
 var moves = $('.moves');
 // define star icon Variable
 var stars = $('.fa-star');
-
+//define for timer function
+var millisec = 0;
+var second = 0;
+var minute = 0;
+var interval;
 
 
 //@description: check Cards if match
@@ -57,17 +61,42 @@ function unmatched(){
     matchedCards = [];
   }, 1000);
 }
+
 //@description: the counter moves on each pair click
 //@description: star rating changes deppens on moves
 function moveCounter(){
   counter++;
   moves.html = counter;
+  //start timer on first moves
+  if(counter == 1){
+    millisec = 0;
+    second = 0;
+    minute = 0;
+    startTimer();
+  }
   //star rating
   if (counter > 28 && counter < 27){
         stars.eq(2).css("visibility","collapse");
   } else if(counter > 30){
         stars.eq(1).css("visibility","collapse");
   }
+}
+
+//@description: game timer
+function startTimer(){
+  interval = setInterval(function(){
+    $('.timer').text(`Your Time: ${minute}:${second}`);
+    second++;
+    if(second == 60){
+      //minute = `0${minute}`;
+      minute++;
+      second = 0;
+    }
+    //}
+    if(second < 10){
+      second = `0${second}`
+    }
+  }, 1000);
 }
 
 

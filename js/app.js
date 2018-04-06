@@ -1,6 +1,3 @@
-/*
- * Create a list that holds all of your cards
- */
  // define icons
 var diamond = $('.fa-diamond');
 var plane = $('.fa-paper-plane-o');
@@ -13,10 +10,8 @@ var bomb = $('.fa-bomb');
 //create a list holds all icons
 var cardsArray = [diamond,diamond,plane,plane,anchor,anchor,bolt,bolt,cube,cube,leaf,leaf,bicycle,bicycle,bomb,bomb];
 console.log(cardsArray);
-//define new array used to put matched cards into array
+//define new array used to put matched cards into new array
 var matchedCards = [];
-// define matched element counts
-var match = 0;
 //define deck
 var deck = $('.deck');
 // define move Variable
@@ -40,7 +35,7 @@ function check(e){
     moveCounter();
   }
 }
-
+//for if cards matching
 function matched(){
   deck.find('.open').addClass('match');
   setTimeout(function(){
@@ -48,7 +43,7 @@ function matched(){
     matchedCards = [];
   }, 1000);
 }
-
+//for if cards not matching
 function unmatched(){
   deck.find('.open').addClass('unmatched');
   //TODO: disabled();
@@ -58,7 +53,7 @@ function unmatched(){
     matchedCards = [];
   }, 1000);
 }
-
+//@description: the counter moves on each pair click
 function moveCounter(){
   counter++;
   moves.html = counter;

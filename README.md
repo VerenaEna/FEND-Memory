@@ -14,15 +14,15 @@ To get started, open `js/app.js` and start building out the app's functionality
 For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
 
 ## How To
-Need to display 8 pairs of cards - 16 cards
+- Need to display 8 pairs of cards - 16 cards
 Need to shuffle all cards when page is loaded or restart the game
-Need to check (click EventListener) if 2 clicked cards matching frontside
-Need to check (click EventListener) if 2 clicked cards show backside
+-Need to check (click EventListener) if 2 clicked cards matching frontside
+-Need to check (click EventListener) if 2 clicked cards show backside
   No Match
   Match
 Need a timer
 Need star rating - depends on moves
-Need move counter - every click = 1 move
+-Need move counter - every click = 1 move
   if 16 cards show frontside(matched,disabled)
     Finish the Game
       show modal/winner

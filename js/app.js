@@ -26,6 +26,21 @@ let second = 0;
 let minute = 0;
 var interval;
 
+// @description: function start game will shuffle and display each card
+function start(){
+  cards = shuffle(cardsArray);
+   // remove all default classes from each card on the deck
+   for (let index of cardsArray){
+     deck.innerHTML = ''; // empty deck
+     cardsArray.forEach(function(item){
+       deck.append(item);
+     });
+   }
+  // set game timer / reset on reload
+  $('.timer').text('0 minute 00 seconds');
+  clearInterval(interval);
+}
+
 //@description: check Cards if match
 function check(type){
   $(type).addClass('open show');
@@ -139,3 +154,5 @@ function startTimer(){
    check(this);
    moves.text(counter);
  });
+
+ start();

@@ -19,14 +19,14 @@ var counter = 0;
 var moves = $('.moves');
 
 //@description: check Cards if match
-function check(e){
-  $(e).addClass('open show');
-  matchedCards.push(e);
+function check(type){
+  $(type).addClass('open show');
+  matchedCards.push(type);
   var length = matchedCards.length;
   if(length === 2){
     if(matchedCards[0].type === matchedCards[1].type){
       matched();
-      console.log(matchedCards);
+      console.log(type);
       console.log('yeah, that was a match - keep on going :)');
     } else {
       unmatched();

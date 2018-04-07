@@ -32,16 +32,13 @@ var interval;
   function start(){
     cards = shuffle(cardsArray);
      // remove all default classes from each card on the deck
-     for (let index of cardsArray){
+     for (let index in cards){
        deck.html = ''; // empty deck
-       cardsArray.forEach(function(item){
-         card.append(item);
+       cards.forEach(function(item){
+         deck.append(item);
        });
-       cardsArray.forEach(function(){
-         card.removeClass('show open match disabled');
-       });
+       $(cards).removeClass('show open match disabled');
      }
-
     //reset Moves
     counter = 0;
     moves.text(counter);
@@ -51,6 +48,8 @@ var interval;
       stars.css('visibility', 'visible');
     };
     // set game timer / reset on reload
+    second = 0;
+    minute = 0;
     $('.timer').text('0 minute 00 seconds');
     clearInterval(interval);
   }
@@ -106,7 +105,7 @@ var interval;
   //@description: star rating changes deppens on moves
   function moveCounter(){
     counter++;
-    moves.html = counter;
+    moves.text(counter);
     //start timer on first moves
     if(counter == 1){
       millisec = 0;

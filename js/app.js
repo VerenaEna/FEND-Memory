@@ -27,6 +27,12 @@ let millisec = 0;
 let second = 0;
 let minute = 0;
 var interval;
+//define modal
+let modal = $('#modal');
+// define stars list
+let starsList = $('.stars li')
+// close icon for modal
+let close = $(".close");
 
   // @description: function start game will shuffle and display each card
   function start(){
@@ -139,6 +145,29 @@ var interval;
     }, 1000);
   }
 
+  //@description: If player found all pairs a winner modal appears
+  function winner(){
+    if(matchedCards.length == 8){
+      console.log('found everything');
+      clearInterval(interval);
+      finalTime = timer.html;
+      modal.addClass('.show');
+      var starRating = $('.stars').html;
+      $('#finalMove').html = moves;
+      $('#finalRating').html = starRating;
+      $('#finalTime').html = finalTime;
+      closeModal();
+    }
+  }
+
+  function closeModal(){
+    close.click(function(e){
+      modal.removeClass("show");
+      startGame();
+    });
+  }
+
+
   /*
   * Display the cards on the page
   *   - shuffle the list of cards using the provided "shuffle" method below
@@ -172,9 +201,11 @@ var interval;
   */
 
   //event listener
-  $('.card').click(function(){
-   check(this);
-   moves.text(counter);
+  card.click(function(){
+    check(this);
+    moves.text(counter);
   });
 
 start();
+//TODO: winner einbauen
+//winner();

@@ -13,6 +13,8 @@ let cardsArray = [...card];
 console.log(cardsArray);
 //define new array used to put matched cards into new array
 let matchedCards = [];
+//define matching cards Variable
+let match = $('.match');
 //define deck
 const deck = $('.deck');
 // define move Variable
@@ -63,20 +65,34 @@ $(document).ready(function(){
   }
   //for if cards matching
   function matched(){
-    deck.find('.open').addClass('match');
+    deck.find('.open').addClass('match disabled');
     deck.find('.match').removeClass('show open');
     matchedCards = [];
   }
   //for if cards not matching
   function unmatched(){
     deck.find('.open').addClass('unmatched');
-    //TODO: disabled();
+    disabled();
     setTimeout(function(){
       deck.find('.unmatched').removeClass('show open unmatched');
-      //TODO: enable();
+      enable();
       matchedCards = [];
-    }, 300);
+    }, 500);
   }
+  //disable cards temporarly
+  function disabled(){
+    deck.find('.match').addClass('disabled');
+    deck.find('.unmatched').addClass('disabled');
+  }
+  //enable cards and disable matched cards
+  function enable(){
+      deck.find('.disabled').removeClass('disabled');
+      for(let index of match){
+        match.forEach(function(){
+          deck.find('.unmatched').addClass('disabled');
+        })
+      };
+  };
 
   //@description: the counter moves on each pair click
   //@description: star rating changes deppens on moves
@@ -157,5 +173,5 @@ $(document).ready(function(){
    });
 
    start();
-   
+
 });

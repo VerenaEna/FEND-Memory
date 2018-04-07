@@ -79,9 +79,14 @@ h1 {
     cursor: default;
     background: #02ccba;
     font-size: 33px;
+    pointer-events: none;
 }
 .deck .card.unmatched {
     background: #f95c3c;
+}
+.deck .card.disabled {
+    pointer-events: none;
+    opacity: 0.9;
 }
 
 .timer {

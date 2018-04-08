@@ -15,6 +15,8 @@ console.log(cardsArray);
 let matchedCards = [];
 //define matching cards Variable
 let match = $('.match');
+//define matched cards to get match count
+let matchCards = 0;
 //define deck
 const deck = $('.deck');
 // define move Variable
@@ -45,6 +47,7 @@ let close = $(".close");
        });
        $(cards).removeClass('show open match disabled');
      }
+    matchCards = 0;
     //reset Moves
     counter = 0;
     moves.text(counter);
@@ -68,6 +71,7 @@ let close = $(".close");
     if(length === 2){
       if(matchedCards[0].type === matchedCards[1].type){
         matched();
+        matchCards++;
         console.log(type);
         console.log('yeah, that was a match - keep on going :)');
       } else {
@@ -147,17 +151,16 @@ let close = $(".close");
 
   //@description: If player found all pairs a winner modal appears
   function winner(){
-    if(matchedCards.length == 8){
-      console.log('found everything');
-      clearInterval(interval);
-      finalTime = timer.html;
-      modal.addClass('.show');
-      var starRating = $('.stars').html;
-      $('#finalMove').html = moves;
-      $('#finalRating').html = starRating;
-      $('#finalTime').html = finalTime;
-      closeModal();
-    }
+    let gameEnd = $('.popup');
+    gameEnd.addClass('show');
+    let starRating = $('.stars').html;
+    finalTime = $('.timer').html;
+    $('#finalMove').html = moves;
+    $('#finalRating').html = starRating;
+    $('#finalTime').html = finalTime;
+    clearInterval(interval);
+    closeModal();
+    console.log('found everything');
   }
 
   function closeModal(){
@@ -204,8 +207,14 @@ let close = $(".close");
   card.click(function(){
     check(this);
     moves.text(counter);
+    for (let index in matchedCards){
+      card.click(function(){
+        if(matchCards === 8){
+          winner();
+          console.log('OK')
+        }
+      })
+    };
   });
 
 start();
-//TODO: winner einbauen
-//winner();

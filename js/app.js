@@ -47,6 +47,11 @@ let close = $(".close");
        });
        $(cards).removeClass('show open match disabled');
      }
+     resetGame();
+  }
+  //@description: reset Game function
+  function resetGame(){
+    //set/reset matchCards count
     matchCards = 0;
     //reset Moves
     counter = 0;
@@ -166,7 +171,7 @@ let close = $(".close");
   function closeModal(){
     close.click(function(e){
       modal.removeClass("show");
-      startGame();
+      start();
     });
   }
 

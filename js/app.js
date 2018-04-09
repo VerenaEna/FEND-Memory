@@ -35,6 +35,9 @@ let modal = $('#modal');
 let starsList = $('.stars li')
 // close icon for modal
 let close = $(".close");
+//define game end
+let gameEnd = $('.popup');
+
 
   // @description: function start game will shuffle and display each card
   function start(){
@@ -156,13 +159,11 @@ let close = $(".close");
 
   //@description: If player found all pairs a winner modal appears
   function winner(){
-    let gameEnd = $('.popup');
     gameEnd.addClass('show');
-    let starRating = $('.stars').html;
-    finalTime = $('.timer').html;
-    $('#finalMove').html = moves;
-    $('#finalRating').html = starRating;
-    $('#finalTime').html = finalTime;
+    let starRating = stars.html;
+    $('#finalMove').text(counter);
+    $('#finalRating').html($('.stars'));
+    $('#finalTime').html($('.timer'));
     clearInterval(interval);
     closeModal();
     console.log('found everything');
@@ -170,7 +171,7 @@ let close = $(".close");
 
   function closeModal(){
     close.click(function(e){
-      modal.removeClass("show");
+      gameEnd.removeClass("show");
       start();
     });
   }

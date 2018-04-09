@@ -93,6 +93,7 @@ let gameEnd = $('.popup');
   function matched(){
     deck.find('.open').addClass('match disabled');
     deck.find('.match').removeClass('show open');
+    disabled();
     matchedCards = [];
   }
   //for if cards not matching

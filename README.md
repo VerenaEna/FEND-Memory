@@ -3,7 +3,8 @@
 ## Table of Contents
 
 * [Instructions](#instructions)
-* [How To](#howto)
+* [To do](#todo)
+* [How to play][#howto]
 
 ## Instructions
 
@@ -13,23 +14,19 @@ To get started, open `js/app.js` and start building out the app's functionality
 
 For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
 
-## How To
-- Need to display 8 pairs of cards - 16 cards
-Need to shuffle all cards when page is loaded or restart the game
--Need to check (click EventListener) if 2 clicked cards matching frontside
--Need to check (click EventListener) if 2 clicked cards show backside
-  No Match
-  Match
-Need a timer
-Need star rating - depends on moves
--Need move counter - every click = 1 move
-  if 16 cards show frontside(matched,disabled)
-    Finish the Game
-      show modal/winner
-        show time needed
-        show starrating
-        show restart button
+## To do
+- Need to display 8 pairs of cards
+- Need matching logic if 2 cards clicked and match
+- Need matching logic if 2 cards clicked and not match
+- Need a timer
+- Need star rating - depends on moves
+- Need move counter - every 2 cards clicked(pair) = 1 move
+- if player found all 8 pairs of cards, a winner modal appears
+- the winner modal have a close icon and a restart button
 
+## How to play
+If u want to play, download/fork this repo and open the index.html in an browser
 
 ## Game Goal
-Goal of the Game is to match all 16 cards together
+You have to find 8 pairs of the icons. Just click a card and find the second one.
+Have fun ;)!

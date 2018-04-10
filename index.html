@@ -23,11 +23,10 @@
         		<li><i class="fa fa-star"></i></li>
         	</ul>
 
-        	<span class="moves">0</span> Moves
-          <div class="timer"></div>
+        	<span id="moves">0</span> Moves
+          <span id="timer"></span>
 
-
-            <div class="restart" onclick="start()">
+          <div class="restart" onclick="start()">
         		<i class="fa fa-repeat"></i>
         	</div>
         </section>
@@ -86,18 +85,13 @@
     <div id="modal" class="popup">
       <div class="game-end">
         <div class="content-1">
-          <h2>Congratulation</h2>
+          <h2>You found all pairs :)</h2>
           <a href="#" class="close">
             <i class="fa fa-times"></i>
           </a>
-          <p>You found all pairs! :)</p>
         </div>
-        <div class="content-2">
-          <p>You made<span id="finalMove"> moves</span></p>
-          <p>and you need<span id="finalTime"></span>to find all pairs</p>
-          <p>Your Rating<span id="finalRating"></span></p>
-        </div>
-        <button id="play-again" onClick="playAgain()">Try again :)</button>
+        <div class="winner-message"></div>
+        <div id="play-again">Try again :)</div>
       </div>
     </div>
 

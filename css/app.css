@@ -81,6 +81,8 @@ h1 {
   background: #02ccba;
   font-size: 33px;
   pointer-events: none;
+  animation: pulse 1s;
+  -webkit-animation: pulse 1s;
 }
 
 /*
@@ -136,6 +138,8 @@ h1 {
 
 .deck .card.unmatched {
   background: #f95c3c;
+  animation: wobble 500ms;
+  -webkit-animation: wobble 500ms;
 }
 
 .deck .card.disabled {
@@ -246,5 +250,74 @@ h1 {
 
   #moves {
     margin: 0 2px;
+  }
+}
+
+/* keyframes for animation */
+@-webkit-keyframes wobble {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  33% {
+    -webkit-transform: translate3d(-30%, 0, 0) rotate3d(0, 0, 1, -3deg);
+    transform: translate3d(-30%, 0, 0) rotate3d(0, 0, 1, -3deg);
+  }
+  66% {
+    -webkit-transform: translate3d(30%, 0, 0) rotate3d(0, 0, 1, 3deg);
+    transform: translate3d(30%, 0, 0) rotate3d(0, 0, 1, 3deg);
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes wobble {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  33% {
+    -webkit-transform: translate3d(-30%, 0, 0) rotate3d(0, 0, 1, -3deg);
+    transform: translate3d(-30%, 0, 0) rotate3d(0, 0, 1, -3deg);
+  }
+  66% {
+    -webkit-transform: translate3d(30%, 0, 0) rotate3d(0, 0, 1, 3deg);
+    transform: translate3d(30%, 0, 0) rotate3d(0, 0, 1, 3deg);
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@-webkit-keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(2, 2, 2);
+    transform: scale3d(2, 2, 2);
+  }
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(2, 2, 2);
+    transform: scale3d(2, 2, 2);
+  }
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
   }
 }

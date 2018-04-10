@@ -3,8 +3,9 @@
 ## Table of Contents
 
 * [Instructions](#instructions)
-* [To do](#todo)
-* [How to play](#howto)
+* [To do](#to do)
+* [How to play](#how to)
+* [Game Goal](#game goal)
 
 ## Instructions
 

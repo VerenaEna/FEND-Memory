@@ -4,7 +4,7 @@
 
 * [Instructions](#instructions)
 * [To do](#todo)
-* [How to play][#howto]
+* [How to play](#howto)
 
 ## Instructions
 

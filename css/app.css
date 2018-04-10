@@ -89,9 +89,15 @@ h1 {
   opacity: 0.9;
 }
 
-.timer {
+#timer {
   display: inline-block;
 }
+
+.winner-text,
+.winner-title {
+  text-align: center;
+}
+
 /*
 * Styles for the Score Panel
 */
@@ -144,7 +150,8 @@ h1 {
 	transition: all 5s ease-in-out;
 }
 .game-end h2 {
-
+  font-size: 2rem;
+  margin-bottom: 0;
 }
 
 .game-end .close {
@@ -188,7 +195,7 @@ h1 {
 	display: block;
 	margin: 0 auto;
 	width: 50%;
-	font-family: 'Gloria Hallelujah', cursive;
 	color: #ffffff;
 	border-radius: 5px;
+  text-align: center;
 }

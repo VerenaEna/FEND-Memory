@@ -51,12 +51,14 @@ let againButton = $('#play-again');
        cards.forEach(function(item){
          deck.append(item);
        });
-       $(cards).removeClass('show open match disabled');
      }
      resetGame();
   }
   //@description: reset Game function
   function resetGame(){
+    setTimeout(function(){
+      $(cards).removeClass('show open match disabled');
+    },100);
     //set/reset matchCards count
     matchCards = 0;
     //reset Moves

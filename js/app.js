@@ -29,7 +29,7 @@ let timer = $('#timer');
 let millisec = 0;
 let second = 0;
 let minute = 0;
-var interval;
+let interval;
 //define modal
 let modal = $('#modal');
 // define stars list
@@ -80,6 +80,7 @@ let againButton = $('#play-again');
     matchedCards.push(type);
     let length = matchedCards.length;
     if(length === 2){
+      moveCounter();
       if(matchedCards[0].type === matchedCards[1].type){
         matched();
         matchCards++;
@@ -89,7 +90,6 @@ let againButton = $('#play-again');
         unmatched();
         console.log('sorry, no match - try another pair ;)');
       }
-      moveCounter();
     }
   }
   //for if cards matching

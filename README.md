@@ -3,9 +3,9 @@
 ## Table of Contents
 
 * [Instructions](#instructions)
-* [To do](#to do)
-* [How to play](#how to)
-* [Game Goal](#game goal)
+* [To do](#todo)
+* [How to play](#how2play)
+* [Game Goal](#gamegoal)
 
 ## Instructions
 
@@ -15,7 +15,7 @@ To get started, open `js/app.js` and start building out the app's functionality
 
 For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
 
-## To do
+## ToDo
 - Need to display 8 pairs of cards
 - Need matching logic if 2 cards clicked and match
 - Need matching logic if 2 cards clicked and not match
@@ -25,9 +25,9 @@ For specific, detailed instructions, look at the project instructions in the [Ud
 - if player found all 8 pairs of cards, a winner modal appears
 - the winner modal have a close icon and a restart button
 
-## How to play
+## How2Play
 If u want to play, download/fork this repo and open the index.html in an browser
 
-## Game Goal
+## GameGoal
 You have to find 8 pairs of the icons. Just click a card and find the second one.
 Have fun ;)!

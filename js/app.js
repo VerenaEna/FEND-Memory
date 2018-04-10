@@ -136,12 +136,12 @@ let againButton = $('#play-again');
       startTimer();
     }
     //star rating
-    if (counter < 20 ){
+    if (counter < 15 ){
       star = 3;
-    } else if (counter > 21 && counter < 26){
+    } else if (counter > 16 && counter < 21){
       star = 2;
       stars.eq(2).css("visibility","collapse");
-    } else if (counter > 27){
+    } else if (counter > 22){
       star = 1
       stars.eq(1).css("visibility","collapse");
     }
@@ -167,7 +167,7 @@ let againButton = $('#play-again');
     const timerResult = timer.text();
     let winnerMessage = $('.winner-message');
     let starsIcon = starsList.html();
-    winnerMessage.html(`<p class="winner-title">Congrats!</p><p class="winner-text">You needed ${counter} moves</p><p class="winner-text">You finished in ${timerResult}!<br>For this you get ${star} ${starsIcon}</p>`);
+    winnerMessage.html(`<p class="winner-title">Congrats!</p><p class="winner-text">You finished in ${timerResult}!<p class="winner-text">You needed ${counter} moves</p><p class="winner-text">For this you get ${star} ${starsIcon}</p>`);
     clearInterval(interval);
     closeModal();
     playAgain();

@@ -137,7 +137,7 @@ h1 {
 }
 
 .deck .card.unmatched {
-  background: #f95c3c;
+  background: #ff404b;
   animation: wobble 500ms;
   -webkit-animation: wobble 500ms;
 }

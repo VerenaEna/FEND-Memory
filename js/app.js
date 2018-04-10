@@ -21,10 +21,11 @@ let matchCards = 0;
 const deck = $('.deck');
 // define move Variable
 let counter = 0;
-const moves = $('.moves');
+const moves = $('#moves');
 // define star icon Variable
 const stars = $('.fa-star');
 //define for timer function
+let timer = $('#timer');
 let millisec = 0;
 let second = 0;
 let minute = 0;
@@ -37,6 +38,8 @@ let starsList = $('.stars li')
 let close = $(".close");
 //define game end
 let gameEnd = $('.popup');
+//define play playAgain
+let againButton = $('#play-again');
 
 
   // @description: function start game will shuffle and display each card
@@ -67,7 +70,7 @@ let gameEnd = $('.popup');
     // set game timer / reset on reload
     second = 0;
     minute = 0;
-    $('.timer').text('0 minute 00 seconds');
+    timer.text('0 minute 00 seconds');
     clearInterval(interval);
   }
 
@@ -146,7 +149,7 @@ let gameEnd = $('.popup');
   //@description: game timer runs proper
   function startTimer(){
     interval = setInterval(function(){
-      $('.timer').text(`${minute} minute ${second} seconds`);
+      timer.text(`${minute} minute ${second} seconds`);
       second++;
       if(second == 60){
         minute++;
@@ -161,13 +164,13 @@ let gameEnd = $('.popup');
   //@description: If player found all pairs a winner modal appears
   function winner(){
     gameEnd.addClass('show');
-    let starRating = stars.html;
-    $('#finalMove').text(counter);
-    $('#finalRating').html($('.stars'));
-    $('#finalTime').html($('.timer'));
+    const timerResult = timer.text();
+    let winnerMessage = $('.winner-message');
+    let starsIcon = starsList.html();
+    winnerMessage.html(`<p class="winner-title">Congrats!</p><p class="winner-text">You needed ${counter} moves</p><p class="winner-text">You finished in ${timerResult}!<br>For this you get ${star} ${starsIcon}</p>`);
     clearInterval(interval);
     closeModal();
-    console.log('found everything');
+    playAgain();
   }
 
   function closeModal(){
@@ -176,6 +179,13 @@ let gameEnd = $('.popup');
       start();
     });
   }
+
+  function playAgain(){
+    againButton.click(function(){
+      gameEnd.removeClass('show');
+      start();
+  })
+};
 
 
   /*
@@ -214,14 +224,8 @@ let gameEnd = $('.popup');
   card.click(function(){
     check(this);
     moves.text(counter);
-    for (let index in matchedCards){
-      card.click(function(){
-        if(matchCards === 8){
-          winner();
-          console.log('OK')
-        }
-      })
-    };
-  });
-
+    if(matchCards === 8){
+      winner();
+    }
+  })
 start();

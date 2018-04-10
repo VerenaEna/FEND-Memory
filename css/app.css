@@ -81,8 +81,8 @@ h1 {
   background: #02ccba;
   font-size: 33px;
   pointer-events: none;
-  animation: pulse 1s;
-  -webkit-animation: pulse 1s;
+  animation: pulse 1s ease-in-out;
+  -webkit-animation: pulse 1s ease-in-out;
 }
 
 /*

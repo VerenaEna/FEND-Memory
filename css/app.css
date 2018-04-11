@@ -92,12 +92,11 @@ h1 {
 .score-panel {
   display: flex;
   justify-content: center;
-  width: 50%;
+  width: 100%;
   margin-bottom: 10px;
 }
 
 .score-panel .stars {
-  margin: 0;
   padding: 0;
   display: inline-block;
   margin: 0 10px;
@@ -261,9 +260,15 @@ h1 {
     width: 85%;
     font-size: 1.2rem;
   }
+
+  .score-panel .stars {
+    margin: 0;
+  }
+
   h1 {
     font-size: 5rem;
   }
+  
   #timer {
     width: 50%;
   }

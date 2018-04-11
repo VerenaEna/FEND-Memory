@@ -37,6 +37,13 @@ header {
   text-align: center;
 }
 
+.header-info {
+  background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+  color: white;
+  padding: 10px;
+}
+
+
 /*
 * Styles for the deck of cards
 */
@@ -207,11 +214,6 @@ header {
 	color: #ffffff;
 	border-radius: 5px;
   text-align: center;
-}
-
-.header-info {
-  background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
-    padding: 1rem;
 }
 
 /* media queries smartphone */

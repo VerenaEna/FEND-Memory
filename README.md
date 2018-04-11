@@ -31,7 +31,8 @@ This software is released under the MIT license.
 - the winner modal have a close icon and a restart button
 
 ## How2Play
-If u want to play, download/fork this repo and open the index.html in an browser
+If u want to play, download/fork this repo and open the index.html in an browser OR
+click the Link :) https://verenaena.github.io/FEND-Memory/
 
 ## GameGoal
 You have to find 8 pairs of the icons. Just click a card and find the second one.

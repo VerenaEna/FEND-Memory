@@ -26,7 +26,6 @@ const moves = $('#moves');
 const stars = $('.fa-star');
 //define for timer function
 let timer = $('#timer');
-let millisec = 0;
 let second = 0;
 let minute = 0;
 let interval;
@@ -58,7 +57,7 @@ let againButton = $('#play-again');
   function resetGame(){
     setTimeout(function(){
       $(cards).removeClass('show open match disabled');
-    },100);
+    }, 100);
     //set/reset matchCards count
     matchCards = 0;
     //reset Moves
@@ -132,7 +131,6 @@ let againButton = $('#play-again');
     moves.text(counter);
     //start timer on first moves
     if(counter == 1){
-      millisec = 0;
       second = 0;
       minute = 0;
       startTimer();

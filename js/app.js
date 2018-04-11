@@ -183,11 +183,11 @@ let againButton = $('#play-again');
   }
 
   function playAgain(){
-    againButton.click(function(){
+    againButton.click(function(e){
       gameEnd.removeClass('show');
       start();
-  })
-};
+    });
+  }
 
 
   /*

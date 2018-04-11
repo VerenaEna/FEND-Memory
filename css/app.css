@@ -33,6 +33,10 @@ h1 {
   font-weight: 300;
 }
 
+header {
+  text-align: center;
+}
+
 /*
 * Styles for the deck of cards
 */
@@ -85,6 +89,17 @@ h1 {
   -webkit-animation: pulse 1s ease-in-out;
 }
 
+.deck .card.unmatched {
+  background: #ff404b;
+  animation: wobble 500ms;
+  -webkit-animation: wobble 500ms;
+}
+
+.deck .card.disabled {
+  pointer-events: none;
+  opacity: 0.9;
+}
+
 /*
 * Styles for the Score Panel
 */
@@ -112,7 +127,9 @@ h1 {
   cursor: pointer;
 }
 
-/* default styles */
+.restart {
+  margin: 0 8px 0 1rem;
+}
 
 #timer {
   margin: 0 1rem;
@@ -123,33 +140,7 @@ h1 {
   margin: 0 4px;
 }
 
-#play-again {
-	background-color: #141214;
-	padding: 0.7rem 1rem;
-	font-size: 1.1rem;
-	display: block;
-	margin: 0 auto;
-	width: 50%;
-	color: #ffffff;
-	border-radius: 5px;
-  text-align: center;
-}
-
-.deck .card.unmatched {
-  background: #ff404b;
-  animation: wobble 500ms;
-  -webkit-animation: wobble 500ms;
-}
-
-.deck .card.disabled {
-  pointer-events: none;
-  opacity: 0.9;
-}
-
-.winner-text,
-.winner-title {
-  text-align: center;
-}
+/* Styles for the modal */
 
 .popup {
   position: fixed;
@@ -201,13 +192,26 @@ h1 {
 	text-align: center;
 }
 
-.show {
-  visibility: visible;
-  opacity: 100;
+.winner-text,
+.winner-title {
+  text-align: center;
 }
 
-.restart {
-  margin: 0 8px 0 1rem;
+#play-again {
+	background-color: #141214;
+	padding: 0.7rem 1rem;
+	font-size: 1.1rem;
+	display: block;
+	margin: 0 auto;
+	width: 50%;
+	color: #ffffff;
+	border-radius: 5px;
+  text-align: center;
+}
+
+.header-info {
+  background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+    padding: 1rem;
 }
 
 /* media queries smartphone */
@@ -255,6 +259,7 @@ h1 {
     margin: 0 2px;
   }
 }
+
 @media screen and (min-width: 621px) and (max-width: 780px){
   .score-panel {
     width: 85%;
@@ -268,7 +273,7 @@ h1 {
   h1 {
     font-size: 5rem;
   }
-  
+
   #timer {
     width: 50%;
   }

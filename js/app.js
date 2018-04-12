@@ -74,8 +74,7 @@ function resetGame() {
   timer.text("0 minute 00 seconds");
   clearInterval(interval);
 }
-
-
+//@description: check Cards if match
 function check(element) {
   // debug for more than 2 clicks
   if ($(element).hasClass('show') || $(element).hasClass('match')) {

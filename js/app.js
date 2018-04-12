@@ -118,12 +118,12 @@ function moveCounter() {
   counter++;
   moves.text(counter);
   //star rating
-  if (counter < 11) {
+  if (counter < 13) {
     star = 3;
-  } else if (counter > 12 && counter < 19) {
+  } else if (counter > 14 && counter < 20) {
     star = 2;
     stars.eq(2).css('visibility', 'collapse');
-  } else if (counter > 20) {
+  } else if (counter > 21) {
     star = 1;
     stars.eq(1).css('visibility', 'collapse');
   }

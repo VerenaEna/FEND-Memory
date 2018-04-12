@@ -100,12 +100,9 @@ header {
   background: #ff404b;
   animation: wobble 500ms;
   -webkit-animation: wobble 500ms;
+  pointer-events: none;
 }
 
-.deck .card.disabled {
-  pointer-events: none;
-  opacity: 0.9;
-}
 
 /*
 * Styles for the Score Panel
@@ -150,20 +147,23 @@ header {
 /* Styles for the modal */
 
 .popup {
-  position: fixed;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	background: rgba(0, 0, 0, 0.7);
-	transition: opacity 500ms;
-	visibility: hidden;
-	opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 200%;
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  opacity: 1;
+  z-index: 20;
+  visibility: hidden;
 }
 
-.popup:target {
+.popup.show {
   visibility: visible;
 	opacity: 1;
+  display: flex;
 }
 
 .game-finish {
@@ -173,7 +173,6 @@ header {
 	border-radius: 5px;
 	width: 85%;
 	position: relative;
-	transition: all 5s ease-in-out;
 }
 
 .game-finish h2 {

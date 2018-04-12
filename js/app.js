@@ -1,31 +1,31 @@
 // define icons
-const diamond = $(".fa .fa-diamond");
-const plane = $(".fa .fa-paper-plane-o");
-const anchor = $(".fa .fa-anchor");
-const bolt = $(".fa .fa-bolt");
-const cube = $(".fa .fa-cube");
-const leaf = $(".fa .fa-leaf");
-const bicycle = $(".fa .fa-bicycle");
-const bomb = $(".fa .fa-bomb");
-let card = $(".card");
+const diamond = $('.fa .fa-diamond');
+const plane = $('.fa .fa-paper-plane-o');
+const anchor = $('.fa .fa-anchor');
+const bolt = $('.fa .fa-bolt');
+const cube = $('.fa .fa-cube');
+const leaf = $('.fa .fa-leaf');
+const bicycle = $('.fa .fa-bicycle');
+const bomb = $('.fa .fa-bomb');
+let card = $('.card');
 //create a list holds all icons
 let cardsArray = [...card];
 console.log(cardsArray);
 //define new array used to put matched cards into new array
 let matchedCards = [];
 //define matching cards Variable
-let match = $(".match");
+let match = $('.match');
 //define matched cards to get match count
 let matchCards = 0;
 //define deck
-const deck = $(".deck");
+const deck = $('.deck');
 // define move Variable
 let counter = 0;
-const moves = $("#moves");
+const moves = $('#moves');
 // define star icon Variable
-const stars = $(".fa-star");
+const stars = $('.fa-star');
 //define for timer function
-let timer = $("#timer");
+let timer = $('#timer');
 let second = 0;
 let minute = 0;
 let interval;
@@ -45,15 +45,14 @@ function start() {
   cards = shuffle(cardsArray);
   // remove all default classes from each card on the deck
   for (let index in cards) {
-    deck.html = ""; // empty deck
+    deck.html = ''; // empty deck
     cards.forEach(function(item) {
       deck.append(item);
     });
     matchedCards = [];
-  };
+  }
   resetGame();
   startTimer();
-
 }
 //@description: reset Game function
 function resetGame() {
@@ -71,7 +70,7 @@ function resetGame() {
   // set game timer / reset on reload
   second = 0;
   minute = 0;
-  timer.text("0 minute 00 seconds");
+  timer.text('0 minute 00 seconds');
   clearInterval(interval);
 }
 //@description: check Cards if match
@@ -98,8 +97,8 @@ function check(element) {
 //for if cards matching
 function matched() {
   deck.find('.open').addClass('match');
-  setTimeout(function () {
-      deck.find('.match').removeClass('open');
+  setTimeout(function() {
+    deck.find('.match').removeClass('open');
   }, 500);
   matchCards++;
   matchedCards = [];
@@ -107,19 +106,19 @@ function matched() {
 //for if cards not matching
 function unmatched() {
   deck.find('.open').addClass('unmatched');
-  setTimeout(function () {
-      deck.find('.open').removeClass('open show unmatched');
-      matchedCards = [];
+  setTimeout(function() {
+    deck.find('.open').removeClass('open show unmatched');
+    matchedCards = [];
   }, 500);
 }
 
 //@description: the counter moves on each pair click
 //@description: star rating changes deppens on moves
-function moveCounter(){
+function moveCounter() {
   counter++;
   moves.text(counter);
   //start timer on first moves
-  if(counter == 1){
+  if (counter == 1) {
     second = 0;
     minute = 0;
     startTimer();
@@ -129,52 +128,52 @@ function moveCounter(){
     star = 3;
   } else if (counter > 16 && counter < 21) {
     star = 2;
-    stars.eq(2).css("visibility", "collapse");
+    stars.eq(2).css('visibility', 'collapse');
   } else if (counter > 22) {
     star = 1;
-    stars.eq(1).css("visibility", "collapse");
+    stars.eq(1).css('visibility', 'collapse');
   }
 }
 //@description: game timer runs proper
-function startTimer(){
-    interval = setInterval(function(){
-      timer.text(`${minute} minute ${second} seconds`);
-      second++;
-      if(second == 60){
-        minute++;
-        second = 0;
-      }
-      if(second < 10){
-        second = `0${second}`;
-      }
-    }, 1000);
-  }
+function startTimer() {
+  interval = setInterval(function() {
+    timer.text(`${minute} minute ${second} seconds`);
+    second++;
+    if (second == 60) {
+      minute++;
+      second = 0;
+    }
+    if (second < 10) {
+      second = `0${second}`;
+    }
+  }, 1000);
+}
 
 //@description: If player found all pairs a winner modal appears
 function winner() {
-    gameEnd.addClass('show');
-    const timerResult = timer.text();
-    $('.winner-message').html(
-      `<p class="winner-title">Congrats!</p><p class="winner-text">You finished in ${timerResult}!<p class="winner-text">You needed ${counter} moves</p><p class="winner-text">For this you get ${star} stars.</p>`
-    );
-    clearInterval(interval);
-    closeModal();
-    playAgain();
-  }
-  // for the close Icon in the winner Modal
-    function closeModal(){
-      close.click(function(e){
-        gameEnd.removeClass('show');
-        start();
-      });
-    }
-    // for the playAgain button in the winner modal
-    function playAgain(){
-      againButton.click(function(e){
-        gameEnd.removeClass('show');
-        start();
-      });
-    }
+  gameEnd.addClass('show');
+  const timerResult = timer.text();
+  $('.winner-message').html(
+    `<p class="winner-title">Congrats!</p><p class="winner-text">You finished in ${timerResult}!<p class="winner-text">You needed ${counter} moves</p><p class="winner-text">For this you get ${star} stars.</p>`
+  );
+  clearInterval(interval);
+  closeModal();
+  playAgain();
+}
+// for the close Icon in the winner Modal
+function closeModal() {
+  close.click(function(e) {
+    gameEnd.removeClass('show');
+    start();
+  });
+}
+// for the playAgain button in the winner modal
+function playAgain() {
+  againButton.click(function(e) {
+    gameEnd.removeClass('show');
+    start();
+  });
+}
 
 // @description: shuffles cards (provided)
 // Shuffle function from http://stackoverflow.com/a/2450976
@@ -196,8 +195,9 @@ function shuffle(array) {
 card.click(function() {
   check(this);
   moves.text(counter);
-  if(matchCards == 8){
+  if (matchCards == 8) {
     winner();
-  }});
+  }
+});
 
 start();

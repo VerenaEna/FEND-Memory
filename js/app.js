@@ -124,12 +124,12 @@ function moveCounter() {
     startTimer();
   }
   //star rating
-  if (counter < 15) {
+  if (counter < 12) {
     star = 3;
-  } else if (counter > 16 && counter < 21) {
+  } else if (counter > 13 && counter < 19) {
     star = 2;
     stars.eq(2).css('visibility', 'collapse');
-  } else if (counter > 22) {
+  } else if (counter > 20) {
     star = 1;
     stars.eq(1).css('visibility', 'collapse');
   }

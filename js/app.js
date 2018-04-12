@@ -21,7 +21,7 @@ let matchCards = 0;
 const deck = $('.deck');
 // define move Variable
 let counter = 0;
-const moves = $('#moves');
+let moves = $('#moves');
 // define star icon Variable
 const stars = $('.fa-star');
 //define for timer function
@@ -83,7 +83,7 @@ function check(element) {
   matchedCards.push(element);
   let length = matchedCards.length;
   if (length === 2) {
-    counter++;
+    moveCounter();
     if (matchedCards[0].type === matchedCards[1].type) {
       matched();
       console.log('yeah, that was a match - keep on going :)');
@@ -117,16 +117,10 @@ function unmatched() {
 function moveCounter() {
   counter++;
   moves.text(counter);
-  //start timer on first moves
-  if (counter == 1) {
-    second = 0;
-    minute = 0;
-    startTimer();
-  }
   //star rating
-  if (counter < 12) {
+  if (counter < 11) {
     star = 3;
-  } else if (counter > 13 && counter < 19) {
+  } else if (counter > 12 && counter < 19) {
     star = 2;
     stars.eq(2).css('visibility', 'collapse');
   } else if (counter > 20) {

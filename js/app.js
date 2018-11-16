@@ -1,5 +1,5 @@
 // define icons
-const diamond = $('.fa .fa-diamond');
+const diamond = $('.fa .fa-gem');
 const plane = $('.fa .fa-paper-plane-o');
 const anchor = $('.fa .fa-anchor');
 const bolt = $('.fa .fa-bolt');
